@@ -70,14 +70,36 @@ export function editPost(cuid, post) {
 
 export function editPostRequest(cuid, post) {
   return (dispatch) => {
-    return callApi(`posts/${cuid}`, 'put', {
+    let objToDispatch = {
       post: {
         // If statement prevent object from updating with empty object error
-        $inc: { votes: post.votes !== 0 ? post.votes : 0 },
+        $inc: { votes: post.votes ? post.votes : 0 },
         name: post.name,
         title: post.title,
         content: post.content,
       },
-    }).then(() => dispatch(editPost(cuid, post)));
+    };
+    if (post.comments) objToDispatch.post.$push = { comments: post.comments[post.comments.length - 1] };
+    return callApi(`posts/${cuid}`, 'put', objToDispatch
+    ).then(() => dispatch(editPost(cuid, post)));
   };
 }
+
+// export function commentPost(cuid, comment) {
+//   return {
+//     type: EDIT_POST,
+//     cuid,
+//     comment,
+//   };
+// }
+//
+// export function commentPostRequest(cuid, comment) {
+//   return (dispatch) => {
+//     return callApi(`posts/${cuid}`, 'put', {
+//       post: {
+//         // If statement prevent object from updating with empty object error
+//         $push: {comments: },
+//       },
+//     }).then(() => dispatch(editPost(cuid, post)));
+//   };
+// }

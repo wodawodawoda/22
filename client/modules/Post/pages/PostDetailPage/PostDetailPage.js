@@ -4,6 +4,10 @@ import Helmet from 'react-helmet';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { getShowEditPost } from '../../../App/AppReducer';
 
+// Import Components
+import PostComments from '../../components/PostComments/PostComments';
+import PostListItem from '../../components/PostListItem/PostListItem';
+
 // Import Style
 import styles from '../../components/PostListItem/PostListItem.css';
 
@@ -28,10 +32,10 @@ export class PostDetailPage extends Component {
   handleEditPost = () => {
     this.props.toggleEditPost();
     this.props.editPostRequest(this.state);
-  }
+  };
 
   handleInputChange = (event) => {
-    const {value, name} = event.target;
+    const { value, name } = event.target;
 
     this.setState({
       [name]: value,
@@ -40,12 +44,19 @@ export class PostDetailPage extends Component {
 
   renderPost = () => {
     return (
-      <div className={`${styles['single-post']} ${styles['post-detail']}`}>
-        <h3 className={styles['post-title']}>{this.props.post.title}</h3>
-        <p className={styles['author-name']}><FormattedMessage id="by" /> {this.props.post.name}</p>
-        <p className={styles['post-desc']}>{this.props.post.content}</p>
+      <div>
+        <PostListItem post={this.props.post} onDelete={this.handleEditPost} onVoteUp={this.handleEditPost} onVoteDown={this.handleEditPost}/>
+        <PostComments comments={this.props.post.comments} handleEditPost={this.props.editPostRequest} />
       </div>
     );
+    // return (
+    //   <div className={`${styles['single-post']} ${styles['post-detail']}`}>
+    //     <h3 className={styles['post-title']}>{this.props.post.title}</h3>
+    //     <p className={styles['author-name']}><FormattedMessage id="by" /> {this.props.post.name}</p>
+    //     <p className={styles['post-desc']}>{this.props.post.content}</p>
+    //     <PostComments comments={this.props.post.comments} handleEditPost={this.props.editPostRequest} />
+    //   </div>
+    // );
   };
 
   renderPostForm = () => {
@@ -66,7 +77,7 @@ export class PostDetailPage extends Component {
         <Helmet title={this.props.post.title} />
         <a className={styles['edit-post-button']}
            onClick={this.props.toggleEditPost}
-           href="#"><FormattedMessage id="editPost" />=</a>
+           href="#"><FormattedMessage id="editPost" /></a>
         {
           this.props.showEditPost
             ? this.renderPostForm()

@@ -1,0 +1,23 @@
+.comment-item {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: lightblue;
+}
+
+.comment-item__user {
+  background: aliceblue;
+  padding: 10px;
+  min-width: 20%;
+}
+
+.comment-item__content {
+  margin-right: auto;
+  padding: 10px;
+}
+
+.comment-item__date {
+  background: aliceblue;
+  padding: 10px;
+}

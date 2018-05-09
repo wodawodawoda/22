@@ -39,7 +39,7 @@
 
 .language-switcher ul {
   list-style: none;
-  width: 980px;
+  /*width: 980px;*/
   margin: auto;
   text-align: right;
 }
