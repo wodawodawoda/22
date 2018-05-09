@@ -19,8 +19,8 @@ class PostComments extends Component {
     return (
       <div className={styles['post-comments']}>
         <form className={styles['post-comments__form']} onSubmit={e => this.handlePostComment(e)}>
-          <input className={styles['post-comments__name']} type="text" placeholder="Name" />
-          <input className={styles['post-comments__content']} placeholder="Write comment" name="content" id="commentContent" />
+          <input className={styles['post-comments__name']} type="text" placeholder="Name" required />
+          <input className={styles['post-comments__content']} placeholder="Write comment" name="content" id="commentContent" required />
           <button className={styles['post-comments__btn']} type="submit">Add comment</button>
         </form>
         {this.props.comments.map((comment, idx) => (

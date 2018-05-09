@@ -70,12 +70,21 @@
   font-size: 1.2rem;
   padding: 0 10px;
   min-width: 30px;
+  transition: 0.2s;
 }
 
 .post-vote-up {
   background: #008800;
 }
 
+.post-vote-up:hover {
+  background: #005500;
+}
+
 .post-vote-down {
   background: #C21F39;
+}
+
+.post-vote-down:hover {
+  background: #7f0014;
 }

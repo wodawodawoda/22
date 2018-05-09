@@ -9,7 +9,7 @@
   background: lightgrey;
 }
 .post-comments__name {
-
+  border: 0;
 }
 .post-comments__content {
   flex: 1;
@@ -17,4 +17,10 @@
 .post-comments__btn {
   background: green;
   padding: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.post-comments__btn:hover {
+  background: #005500;
 }
