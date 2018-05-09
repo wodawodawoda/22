@@ -6,9 +6,9 @@ import styles from './Navigation.css';
 const Navigation = (props, context) => {
   return (
     <div className={styles.navigation}>
-      <Link to="/home" onlyActiveOnIndex>Home</Link>
-      <Link to="/" onlyActiveOnIndex>Posts</Link>
-      <Link to="/about" onlyActiveOnIndex>About</Link>
+      <Link activeClassName={styles['navigation__link--active']} className={styles['navigation__link']} to="/" onlyActiveOnIndex>Home</Link>
+      <Link activeClassName={styles['navigation__link--active']} className={styles['navigation__link']} to="/posts" onlyActiveOnIndex>Posts</Link>
+      <Link activeClassName={styles['navigation__link--active']} className={styles['navigation__link']} to="/about" onlyActiveOnIndex>About</Link>
     </div>
   );
 };

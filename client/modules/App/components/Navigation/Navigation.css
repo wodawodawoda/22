@@ -1,5 +1,21 @@
 .navigation {
-  background: black;
-  /*background-size: cover;*/
-  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+
+.navigation__link {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  height: 100%;
+  transition: 0.2s;
+}
+
+.navigation__link:hover {
+  background: rgba(0,0,0,0.5);
+}
+
+.navigation__link--active {
+  background: rgba(0,0,0,0.5);
+  color: gold;
 }

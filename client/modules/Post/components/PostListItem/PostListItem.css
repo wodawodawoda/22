@@ -44,7 +44,7 @@
   height: 1px;
   background: #ccc;
   width: 250px;
-  margin: 32px auto 0;
+  margin: 32px auto 16px;
 }
 
 .post-detail .post-title{
@@ -55,4 +55,27 @@
 .post-detail .post-desc{
   font-size: 16px;
   color: #555;
+}
+
+.post-footer {
+  display: flex;
+  align-items: center;
+}
+
+.post-date {
+  margin-right: auto;
+}
+
+.btn-vote {
+  font-size: 1.2rem;
+  padding: 0 10px;
+  min-width: 30px;
+}
+
+.post-vote-up {
+  background: #008800;
+}
+
+.post-vote-down {
+  background: #C21F39;
 }
