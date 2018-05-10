@@ -8,6 +8,7 @@ import styles from './App.css';
 import Helmet from 'react-helmet';
 import DevTools from './components/DevTools';
 import Header from './components/Header/Header';
+import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
 
 // Import Actions
@@ -32,7 +33,7 @@ export class App extends Component {
     return (
       <div>
         {this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && <DevTools />}
-        <div>
+        <div className={styles['layout']}>
           <Helmet
             title="MERN Starter - Blog App"
             titleTemplate="%s - Blog App"
@@ -56,6 +57,7 @@ export class App extends Component {
           <div className={styles.container}>
             {this.props.children}
           </div>
+          <Sidebar />
           <Footer />
         </div>
       </div>

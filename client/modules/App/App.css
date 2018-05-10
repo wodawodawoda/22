@@ -4,4 +4,33 @@
   min-height: calc(100vh - 382px);
   padding: 15px;
   margin: 0 auto;
+  grid-area: content;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) 1fr 1fr 1fr minmax(100px, 1fr);
+  grid-template-rows: 200px 1fr 200px;
+  grid-template-areas:
+    ". header header header ."
+    ". content content sidebar ."
+    ". footer footer footer .";
+  /*grid-template-columns: 2fr 1fr;*/
+  /*grid-template-rows: 200px 800px 200px;*/
+}
+
+@media (max-width: 1200px) {
+  .layout {
+    grid-template-columns: auto 1fr 1fr 1fr auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-areas:
+      ". header header header ."
+      ". content content content ."
+      ". sidebar sidebar sidebar ."
+      ". footer footer footer .";
+  }
 }
