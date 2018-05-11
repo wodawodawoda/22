@@ -1,0 +1,33 @@
+/* FacebookPlugin styles */
+
+.github-plugin
+  background: #FFF
+  max-height: 300px
+  &__name
+    position: sticky
+    top: 0
+    padding: 10px
+    background: rgb(36, 41, 46)
+    color: #FFFFFF
+    text-align: center
+    margin-bottom: 15px
+  &__header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-bottom: 3px solid rgb(36, 41, 46)
+    padding-bottom: 10px
+    &:hover + .github-plugin__commits
+      height: 100%
+  &__commits
+    overflow: auto
+    height: 0
+    max-height: 200px
+    &:hover
+      height: 100%
+  &__commit
+    border-bottom: 1px solid rgb(36, 41, 46)
+
+
+
+

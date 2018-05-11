@@ -6,6 +6,7 @@ import { FormattedMessage } from 'react-intl';
 import styles from './PostListItem.css';
 
 function PostListItem(props) {
+  console.log(props.post)
   return (
     <div className={styles['single-post']}>
       <h3 className={styles['post-title']}>
@@ -17,10 +18,13 @@ function PostListItem(props) {
       <p className={styles['post-desc']}>{props.post.content}</p>
       <p className={styles['post-action']}><a href="#" onClick={props.onDelete}><FormattedMessage id="deletePost" /></a></p>
       <hr className={styles.divider} />
+      <div className={styles['vote-container']}>
+        <button className={`${styles['btn-vote']} ${styles['post-vote-up']}`} onClick={props.onVoteUp}>🖒</button>
+        <button className={`${styles['btn-vote']} ${styles['post-vote-down']}`} onClick={props.onVoteDown}>🖓</button>
+      </div>
       <div className={styles['post-footer']}>
         <span className={styles['post-date']}>{props.post.dateAdded}</span>
-        <button className={`${styles['btn-vote']} ${styles['post-vote-up']}`} onClick={props.onVoteUp}>+</button>
-        <button className={`${styles['btn-vote']} ${styles['post-vote-down']}`} onClick={props.onVoteDown}>-</button>
+        <span>{props.post.comments.length} comments</span>
       </div>
     </div>
   );

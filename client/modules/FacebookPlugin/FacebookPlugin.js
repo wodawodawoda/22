@@ -33,7 +33,7 @@ class FacebookPlugin extends Component {
   render() {
     return (
       <div className="facebook-plugin">
-        <h2 className="facebook-plugin__header">Facebook</h2>
+        <h2 className="facebook-plugin__header"><a href={"http://www.facebook.com"}>Facebook</a></h2>
         {this.state.posts.length > 0 ? this.renderPost() : 'loading'}
       </div>
     );
