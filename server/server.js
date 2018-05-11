@@ -143,6 +143,20 @@ app.use((req, res, next) => {
   });
 });
 
+// Handle facebook API request
+app.get('/facebook', (req, res) => {
+  const apiKey = "EAACEdEose0cBAHrxk5AntkArfwR2CEHgIvhcVk1eZBnzTPw5VUmigwfpVBfZClt2QJ3nE1G3Epwhf1IBZBN0ulXesti9XSZBth4DvZCMCzZBKgmfG8hbzl7TqenRrupzsaZA08hhxTCEjh7CpSen0JUKfjIInorvZAuDCOZCIDTHfbRy2TOs3yC4Sf6ygvyVnQZBwZD";
+  const pageId = "facebook"; // select page
+  const limit = 5;
+  const apiEndpoint = "feed?fields=id%2Cmessage%2Clink%2Cfull_picture%2Cpicture";
+  const apiUrl = `https://graph.facebook.com/v3.0/${pageId}/${apiEndpoint}&limit=${limit}&access_token=${apiKey}`;
+  fetch(apiUrl)
+    .then(res => res.json())
+    .then(myJson => res.json(myJson));
+});
+
+
+
 // start app
 app.listen(serverConfig.port, (error) => {
   if (!error) {

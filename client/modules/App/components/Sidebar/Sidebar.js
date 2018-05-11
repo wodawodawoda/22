@@ -1,13 +1,17 @@
 import React, { PropTypes } from 'react';
 
-import styles from './Sidebar.css';
+import './Sidebar.sass';
+
+import FacebookPlugin from '../../../FacebookPlugin/FacebookPlugin';
+
+import FacebookProvider, { Page, EmbeddedPost } from 'react-facebook'
 
 const Sidebar = (props, context) => {
   return (
-    <aside className={styles.sidebar}>
-      <header className={styles['header']}>
-        <h2 className={styles['header__name']}>Sidebar</h2>
-      </header>
+    <aside className="sidebar">
+      <section className="sidebar__plugin">
+        <FacebookPlugin />
+      </section>
     </aside>
   );
 };
