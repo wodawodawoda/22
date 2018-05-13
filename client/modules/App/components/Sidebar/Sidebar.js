@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import './Sidebar.sass';
 
 import FacebookPlugin from '../../../FacebookPlugin/FacebookPlugin';
-import GithubPlugin from '../../../../components/GithubPlugin'
+import GithubPlugin from '../../../GithubPlugin/GithubPlugin'
 
 import FacebookProvider, { Page, EmbeddedPost } from 'react-facebook'
 

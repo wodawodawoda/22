@@ -9,6 +9,7 @@ const Navigation = (props, context) => {
       <Link activeClassName={styles['navigation__link--active']} className={styles['navigation__link']} to="/" onlyActiveOnIndex>Home</Link>
       <Link activeClassName={styles['navigation__link--active']} className={styles['navigation__link']} to="/posts" onlyActiveOnIndex>Posts</Link>
       <Link activeClassName={styles['navigation__link--active']} className={styles['navigation__link']} to="/about" onlyActiveOnIndex>About</Link>
+      <Link activeClassName={styles['navigation__link--active']} className={styles['navigation__link']} to="/portfolio" onlyActiveOnIndex>Portfolio</Link>
     </div>
   );
 };

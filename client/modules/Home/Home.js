@@ -8,7 +8,9 @@ import { bindActionCreators } from 'redux';
 class Home extends Component {
   render() {
     return (
-      <div>I'm home component</div>
+      <div>
+        <div>I'm home component</div>
+      </div>
     );
   }
 }
