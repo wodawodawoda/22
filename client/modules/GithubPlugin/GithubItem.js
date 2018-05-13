@@ -15,6 +15,7 @@ class GithubItem extends Component {
     };
   }
   componentWillMount() {
+    // Separate fetchs intentionally - first render description, then render hidden commits
     fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}/commits${auth}`)
       .then(res => res.json())
       .then(commits => this.setState({commits}));
@@ -52,7 +53,7 @@ class GithubItem extends Component {
         </div>
         <div className="github-item__repo">
           {this.state.repo ? this.renderDescription() : 'loading'}
-          {this.state.repo ? this.renderCommits() : 'loading'}
+          {this.state.commits ? this.renderCommits() : 'loading'}
         </div>
       </div>
     );

@@ -83,7 +83,7 @@ class GithubPlugin extends Component {
     // ]).then(data => {
     //   return data.map(item => item.json())
     // })
-    //   .then(json => json[0]) // json = [Promise, Promise, Promise]
+    //   .then(json => json[0]) // Dostaję taki array => json = [Promise, Promise, Promise]
     //   .then(res => console.log(res)); // Tutaj gubię się i nie wiem jak dostać się do poszczególnych wartości Promisów
   }
 
